@@ -1,19 +1,16 @@
 
 import styles from './page.module.css'
 import GameCard from './components/gameCard'
+import games from './objects'
 
 export default function Home() {
-
-  //I don't know how to add stuff interactively in React
-  const cardContainer = .getElementsByClassName("cards-container")[0]
-
-  const createNewGame = () => {
-    cardContainer.append(<GameCard></GameCard>);
-  }
   return (
     <main className={styles.main}>
       <h1>My Game Vault</h1>
       <div className='cards-container'>
+        {games.map((game, index) => (
+          <GameCard title={game.title} console={game.console} rating={game.rating}/>
+        ))}
         <button onClick={createNewGame}>New Game</button>
         <GameCard title="Metroid" console="GameCube" rating="10"/>
         <GameCard title="Mario" console="N64" rating="2"/>
