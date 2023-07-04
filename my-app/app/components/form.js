@@ -1,10 +1,11 @@
 'use client'
 import React, { useState } from 'react';
 
-const MyForm = () => {
+const MyForm = ({save}) => {
   const [text1, setText1] = useState('');
   const [text2, setText2] = useState('');
   const [number, setNumber] = useState(0);
+
 
   const handleText1Change = (e) => {
     setText1(e.target.value);
@@ -26,10 +27,19 @@ const MyForm = () => {
     console.log('Text 2:', text2);
     console.log('Number:', number);
 
+    console.log('form has been submitted')
+
+    save({
+        title: text1,
+        console: text2,
+        rating: number
+    })
+
     // Reset the form after submission
     setText1('');
     setText2('');
     setNumber(0);
+
   };
 
   return (
@@ -53,7 +63,7 @@ const MyForm = () => {
         </label>
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <button type="submit">Save</button>
       </div>
     </form>
   );

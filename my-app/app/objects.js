@@ -7,7 +7,7 @@ const games = [
     {
         title: "Metroid",
         console: "Game Cube",
-        rating: 10
+        rating: 5
     }
 ];
 
