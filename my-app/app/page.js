@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 
 import styles from './page.module.css'
+import './page.css'
+
 import GameCard from './components/gameCard'
 import savedGames from './objects'
 {/*import games from './gamme.json'*/}
-import MyForm from './components/form'
+import FormDialog from './components/myForm';
 
 
 export default function Home() {
@@ -28,12 +30,13 @@ export default function Home() {
   {/* Have state for games in this file and pass in save method*/}
   return (
     <main className={styles.main}>
-      <MyForm save={save}></MyForm>
+      <FormDialog save={save}></FormDialog>
       <h1>My Game Vault</h1>
       <div className='cards-container'>
-        <ul>{listItems}</ul>
-        <button>New Game</button>
+        <FormDialog save={save}></FormDialog>
+        {listItems}
       </div>
+
     </main>
   );
 }
