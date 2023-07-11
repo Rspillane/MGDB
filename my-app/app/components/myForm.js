@@ -6,6 +6,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
+import './myForm.css'
 
 export default function FormDialog({save}) {
   const [open, setOpen] = React.useState(false);
@@ -61,7 +62,7 @@ export default function FormDialog({save}) {
 
   return (
     <div>
-      <Button id="new-game-button" variant="outlined" onClick={handleClickOpen}>
+      <Button id="new-game-button" variant="contained" onClick={handleClickOpen}>
         +
       </Button>
       <Dialog open={open} onClose={handleClose}>
