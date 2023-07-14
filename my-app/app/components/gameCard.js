@@ -8,13 +8,13 @@ export default function GameCard({title, console, rating, img}) {
 
   return (
     <div className="card">
-      <div className="card_container" style={{ backgroundImage: `url(${img})` }} // doesn't work
+      <div className="card_container" /*style={{ backgroundImage: `url(${img})` }}*/ // doesn't work
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}>
       {isShown && (
         <div className="card-content">
-          <p> Platform:     {console}</p>
-          <p> Your Rating:    {rating} / 10</p>
+          {/* <p> Platform:     {console}</p>
+          <p> Your Rating:    {rating} / 10</p> */}
         </div>
       )}
       </div>
