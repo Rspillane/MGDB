@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 import styles from './page.module.css';
+import './vault.css';
 
 import GameCard from './components/gameCard';
 import savedGames from './objects';
@@ -46,9 +47,14 @@ export default function Home() {
     <main className={styles.main}>
       <h1>Game Vault</h1>
       <div className='cards-container'>
-        <FormDialog save={save}></FormDialog>
+        {/* <FormDialog save={save}></FormDialog> */}
         {listItems}
-        {searchResults.map(searchResult => `, ${searchResult.name}`)}
+        <div>
+        {searchResults.map(searchResult => `${searchResult.name}, `)}
+        </div>
+        <div>
+        {searchResults.map(searchResult => `${searchResult.cover}, `)}
+        </div>
       </div>
 
     </main>

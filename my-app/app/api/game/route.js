@@ -17,10 +17,25 @@
         'Client-ID': 'sgukfvdo3to7ptty3fbhv5wqjvm5bu',
         'Authorization': `Bearer ${data.access_token}`
       },
-      body: "fields name,genres;"
+      body: "fields name;"
+      
       // body: JSON.stringify({ time: new Date().toISOString() }),
     })
-    const gamesResponse = await games.json()
-    console.log(gamesResponse)
-    return NextResponse.json({games: gamesResponse})
+
+    const gameResponse = await games.json()
+    console.log(gameResponse)
+
+    // const covers = await fetch('https://api.igdb.com/v4/cover', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Client-ID': 'sgukfvdo3to7ptty3fbhv5wqjvm5bu',
+    //     'Authorization': `Bearer ${data.access_token}`
+    //   },
+    //   body: "fields cover.*;"
+    //   // body: JSON.stringify({ time: new Date().toISOString() }),
+    // })
+    // const coversResponse = await covers.json()
+    // console.log(coversResponse)
+
+    return NextResponse.json({games: gameResponse})
   }

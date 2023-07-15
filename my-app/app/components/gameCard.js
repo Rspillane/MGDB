@@ -18,7 +18,7 @@ export default function GameCard({title, console, rating, img}) {
         </div>
       )}
       </div>
-      <h3 className="game-title">{title}</h3>
+      <p className="game-title">{title}</p>
     </div>
   )
 }
