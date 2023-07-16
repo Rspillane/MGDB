@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -14,6 +13,8 @@ import "./gameCard.css";
 
 export default function GameDialog({title, image_id, summary}) {
   const [open, setOpen] = React.useState(false);
+  const [wish, setWish] = useState(false);
+  const [value, setValue] = useState();
   const [data, setData] = React.useState([]);
 
   const handleClickOpen = () => {
@@ -24,9 +25,9 @@ export default function GameDialog({title, image_id, summary}) {
     setOpen(false);
   };
 
-  useEffect(() => {
-    localStorage.setItem('dataKey', JSON.stringify(data));
-  }, [data]);
+//   useEffect(() => {
+//     localStorage.setItem('dataKey', JSON.stringify(data));
+//   }, [data]);
 
   return (
     <div>
@@ -44,8 +45,12 @@ export default function GameDialog({title, image_id, summary}) {
         </DialogContent>
 
         <DialogActions className='dialog-actions'>
-          <Rating className="rating" name="half-rating" defaultValue={0} precision={0.5}/>
-          <button className="wishlist" onClick={handleClose}>Wishlist</button>
+          <Rating className="rating" name="half-rating" defaultValue={0} precision={0.5}
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+        }}/>
+          { !value ? <button className="wishlist" onClick={() => {handleClose; setWish(true)}}>Wishlist</button>: null }
         </DialogActions>
       </Dialog>
     </div>
