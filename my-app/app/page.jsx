@@ -6,7 +6,6 @@ import './vault.css';
 
 import GameCard from './components/gameCard';
 import savedGames from './objects';
-import FormDialog from './components/myForm';
 
 
 export default function Home() {
@@ -29,31 +28,30 @@ export default function Home() {
   if (!searchResults) return <p>No profile data</p>
 
   const listItems = searchResults.map(game => 
-    <GameCard title={game.name} /*console={game.console} rating={game.rating}*//>
+    <GameCard title={game.name} image_id={game.image_id} summary={game.summary}/>
   );
 
-  const save = (newGame) => {
+  // const save = (newGame) => {
 
-    const newGames = [
-        ...games,
-        newGame
-    ]
-    setGames(newGames);
-    console.log(games, newGames);
-  };
+  //   const newGames = [
+  //       ...games,
+  //       newGame
+  //   ]
+  //   setGames(newGames);
+  //   console.log(games, newGames);
+  // };
 
   {/* Have state for games in this file and pass in save method*/}
   return (
     <main className={styles.main}>
       <h1>Game Vault</h1>
       <div className='cards-container'>
-        {/* <FormDialog save={save}></FormDialog> */}
         {listItems}
         <div>
-        {searchResults.map(searchResult => `${searchResult.name}, `)}
+        {searchResults.map(searchResult => `${searchResult.cover}, `)}
         </div>
         <div>
-        {searchResults.map(searchResult => `${searchResult.cover}, `)}
+        {searchResults.map(searchResult => `${searchResult.image_id}, `)}
         </div>
       </div>
 

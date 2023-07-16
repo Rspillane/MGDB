@@ -5,13 +5,14 @@
     flex-direction: column;
     align-items: center;
 }
+
 .card_container {
     cursor: pointer;
     width: 150px;
     height: 200px;
     border: 1px solid;
     border-radius: 10px;
-    background-color: gray;
+    background-size: cover;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
     /* display: flex;
@@ -20,7 +21,7 @@
     align-items: center; */
 
     padding: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .card_container:hover{
@@ -35,5 +36,20 @@
     justify-content: center;
     text-align: center;
     width: 180px;
+    padding-top: 10px;
 }
 
+.dialog-actions{
+    margin: 20px;
+    border: solid;
+    border-radius: 30px;
+    width: 250px;
+
+    display: flex;
+    align-self: center;
+}
+
+.wishlist {
+    cursor: pointer;
+    width: 100%;
+}

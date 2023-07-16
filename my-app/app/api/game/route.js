@@ -17,10 +17,11 @@
         'Client-ID': 'sgukfvdo3to7ptty3fbhv5wqjvm5bu',
         'Authorization': `Bearer ${data.access_token}`
       },
-      body: "fields name;"
+      body: "fields name,cover.image_id,summary; where rating > 90; limit 100;"
       
       // body: JSON.stringify({ time: new Date().toISOString() }),
     })
+
 
     const gameResponse = await games.json()
     console.log(gameResponse)
@@ -31,7 +32,7 @@
     //     'Client-ID': 'sgukfvdo3to7ptty3fbhv5wqjvm5bu',
     //     'Authorization': `Bearer ${data.access_token}`
     //   },
-    //   body: "fields cover.*;"
+    //   body: "fields *;"
     //   // body: JSON.stringify({ time: new Date().toISOString() }),
     // })
     // const coversResponse = await covers.json()
