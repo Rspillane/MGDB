@@ -1,0 +1,290 @@
+{
+    "games": [
+      {
+        "title": "The Legend of Zelda: Breath of the Wild"
+      },
+      {
+        "title": "The Witcher 3: Wild Hunt"
+      },
+      {
+        "title": "Red Dead Redemption 2"
+      },
+      {
+        "title": "Grand Theft Auto V"
+      },
+      {
+        "title": "Minecraft"
+      },
+      {
+        "title": "Fortnite"
+      },
+      {
+        "title": "Overwatch"
+      },
+      {
+        "title": "Super Mario Odyssey"
+      },
+      {
+        "title": "Dark Souls III"
+      },
+      {
+        "title": "God of War (2018)"
+      },
+      {
+        "title": "Call of Duty: Modern Warfare (2019)"
+      },
+      {
+        "title": "Super Smash Bros. Ultimate"
+      },
+      {
+        "title": "FIFA 21"
+      },
+      {
+        "title": "Apex Legends"
+      },
+      {
+        "title": "League of Legends"
+      },
+      {
+        "title": "The Elder Scrolls V: Skyrim"
+      },
+      {
+        "title": "Animal Crossing: New Horizons"
+      },
+      {
+        "title": "Cyberpunk 2077"
+      },
+      {
+        "title": "Destiny 2"
+      },
+      {
+        "title": "Assassin's Creed Valhalla"
+      },
+      {
+        "title": "Halo: Master Chief Collection"
+      },
+      {
+        "title": "Pokémon Sword and Shield"
+      },
+      {
+        "title": "Star Wars Jedi: Fallen Order"
+      },
+      {
+        "title": "Final Fantasy VII Remake"
+      },
+      {
+        "title": "Borderlands 3"
+      },
+      {
+        "title": "Rainbow Six Siege"
+      },
+      {
+        "title": "Tom Clancy's Ghost Recon Breakpoint"
+      },
+      {
+        "title": "The Last of Us Part II"
+      },
+      {
+        "title": "Spider-Man (2018)"
+      },
+      {
+        "title": "Rocket League"
+      },
+      {
+        "title": "Genshin Impact"
+      },
+      {
+        "title": "PUBG (PlayerUnknown's Battlegrounds)"
+      },
+      {
+        "title": "World of Warcraft"
+      },
+      {
+        "title": "Dota 2"
+      },
+      {
+        "title": "Valorant"
+      },
+      {
+        "title": "Cuphead"
+      },
+      {
+        "title": "Sekiro: Shadows Die Twice"
+      },
+      {
+        "title": "The Sims 4"
+      },
+      {
+        "title": "Terraria"
+      },
+      {
+        "title": "Undertale"
+      },
+      {
+        "title": "Bioshock Infinite"
+      },
+      {
+        "title": "The Division 2"
+      },
+      {
+        "title": "Firewatch"
+      },
+      {
+        "title": "Resident Evil Village"
+      },
+      {
+        "title": "The Outer Worlds"
+      },
+      {
+        "title": "Monster Hunter World"
+      },
+      {
+        "title": "Devil May Cry 5"
+      },
+      {
+        "title": "DOOM Eternal"
+      },
+      {
+        "title": "Celeste"
+      },
+      {
+        "title": "Persona 5"
+      },
+      {
+        "title": "Nier: Automata"
+      },
+      {
+        "title": "Watch Dogs: Legion"
+      },
+      {
+        "title": "Mortal Kombat 11"
+      },
+      {
+        "title": "Death Stranding"
+      },
+      {
+        "title": "Diablo III"
+      },
+      {
+        "title": "Splatoon 2"
+      },
+      {
+        "title": "Starcraft II"
+      },
+      {
+        "title": "Gears 5"
+      },
+      {
+        "title": "Forza Horizon 4"
+      },
+      {
+        "title": "Civilization VI"
+      },
+      {
+        "title": "Football Manager 2021"
+      },
+      {
+        "title": "Need for Speed Heat"
+      },
+      {
+        "title": "Resident Evil 2 (2019)"
+      },
+      {
+        "title": "Metal Gear Solid V: The Phantom Pain"
+      },
+      {
+        "title": "Mass Effect: Legendary Edition"
+      },
+      {
+        "title": "Titanfall 2"
+      },
+      {
+        "title": "Dead by Daylight"
+      },
+      {
+        "title": "Stardew Valley"
+      },
+      {
+        "title": "The Witness"
+      },
+      {
+        "title": "Subnautica"
+      },
+      {
+        "title": "The Stanley Parable"
+      },
+      {
+        "title": "Hades"
+      },
+      {
+        "title": "Disco Elysium"
+      },
+      {
+        "title": "Battlefield V"
+      },
+      {
+        "title": "Fornite"
+      },
+      {
+        "title": "Hearthstone"
+      },
+      {
+        "title": "Dead Cells"
+      },
+      {
+        "title": "Among Us"
+      },
+      {
+        "title": "Slay the Spire"
+      },
+      {
+        "title": "Phasmophobia"
+      },
+      {
+        "title": "Outer Wilds"
+      },
+      {
+        "title": "Rainbow Six Siege"
+      },
+      {
+        "title": "Rust"
+      },
+      {
+        "title": "Fall Guys: Ultimate Knockout"
+      },
+      {
+        "title": "Resident Evil 7: Biohazard"
+      },
+      {
+        "title": "Ori and the Will of the Wisps"
+      },
+      {
+        "title": "Nioh 2"
+      },
+      {
+        "title": "Hyrule Warriors: Age of Calamity"
+      },
+      {
+        "title": "Pokémon Go"
+      },
+      {
+        "title": "Madden NFL 22"
+      },
+      {
+        "title": "F1 2021"
+      },
+      {
+        "title": "Crash Bandicoot 4: It's About Time"
+      },
+      {
+        "title": "Assassin's Creed Odyssey"
+      },
+      {
+        "title": "Far Cry 5"
+      },
+      {
+        "title": "Uncharted 4: A Thief's End"
+      }
+    ]
+  }
+  

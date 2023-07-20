@@ -53,3 +53,8 @@
     cursor: pointer;
     width: 100%;
 }
+
+.dialog-top {
+    display: flex;
+    flex-direction: row;
+}
