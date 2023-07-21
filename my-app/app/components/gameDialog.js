@@ -11,7 +11,7 @@ import Rating from '@mui/material/Rating';
 
 import "./gameCard.css";
 
-export default function GameDialog({title, image_id, summary}) {
+export default function GameDialog({title, image_id, summary, genres, platforms}) {
   const [open, setOpen] = React.useState(false);
   const [wish, setWish] = useState(false);
   const [value, setValue] = useState();
@@ -40,8 +40,8 @@ export default function GameDialog({title, image_id, summary}) {
             </div>
             <div className='dialog-info-section'>
               <DialogTitle>{title}</DialogTitle>
-              <h3>Genre</h3>
-              <h4>Console</h4>
+              <h3>Genres - {genres}</h3>
+              <h4>Platforms - {platforms}</h4>
               <h4>Developer and Publisher</h4>
             </div>
           </DialogContent>

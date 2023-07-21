@@ -9,7 +9,6 @@ import savedGames from './objects';
 
 
 import SearchVar from './sections/header/searchVar';
-import Sort from './sections/header/sort';
 
 
 export default function Home() {
@@ -32,7 +31,13 @@ export default function Home() {
   if (!searchResults) return <p>No profile data</p>
 
   const listItems = searchResults.map(game => 
-    <GameCard title={game.name} image_id={game.cover.image_id} summary={game.summary}/>
+    <GameCard 
+      title={game.name} 
+      image_id={game.cover.image_id} 
+      summary={game.summary} 
+      genres={game.genres} 
+      platforms={game.platforms}
+    />
   );
 
 
@@ -42,15 +47,8 @@ export default function Home() {
       <section id='search-section'>
         <h1> Search Section </h1>
         <div className='search'>
-          <SearchVar></SearchVar>
+          <SearchVar games={searchResults}></SearchVar>
           {/* i want to use search as a generic component for both titles and genres with the cached responses as the list input */}
-          <Sort></Sort>
-        </div>
-        <div className='filter'>
-
-        </div>
-        <div className='sort'>
-
         </div>
       </section>
       <h1>Game Vault</h1>
