@@ -2,17 +2,15 @@
 import React, { useState, useEffect } from 'react';
 
 import styles from './page.module.css';
-import './vault.css';
+import './sections/vault/vault.css';
 
 import GameCard from './components/gameCard';
-import savedGames from './objects';
 
 
 import SearchVar from './sections/header/searchVar';
 
 
 export default function Home() {
-  const [games, setGames] = useState(savedGames);
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setLoading] = useState(false)
 

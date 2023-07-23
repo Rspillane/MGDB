@@ -1,8 +1,6 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
-import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
-import {targetArray} from './example.js';
 
 export default function SearchVar({games}) {
   {console.log(games)}
