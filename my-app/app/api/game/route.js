@@ -20,7 +20,7 @@
       'Client-ID': 'sgukfvdo3to7ptty3fbhv5wqjvm5bu',
       'Authorization': `Bearer ${data.access_token}`
     },
-    body: "fields name,cover.image_id,summary,genres,platforms; where rating > 90; limit 100;"
+    body: "fields name,cover.image_id,summary,genres,platforms; where rating > 95; limit 100;"
     
     // body: JSON.stringify({ time: new Date().toISOString() }),
   })

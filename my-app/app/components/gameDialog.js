@@ -34,15 +34,15 @@ export default function GameDialog({title, image_id, summary, genres, platforms}
       <Button className='card_container' onClick={handleClickOpen} style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogContent>
+        <DialogContent className='dialog-popup-window'>
           <DialogContent className='dialog-top'>
-            <div className='dialog image card_container' style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
+            <div className='dialog-image' style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
             </div>
             <div className='dialog-info-section'>
               <DialogTitle>{title}</DialogTitle>
-              <h3>Genres - {genres}</h3>
-              <h4>Platforms - {platforms}</h4>
-              <h4>Developer and Publisher</h4>
+              <DialogContentText>Genres - {genres}</DialogContentText>
+              <DialogContentText>Platforms - {platforms}</DialogContentText>
+              <DialogContentText>Developer and Publisher</DialogContentText>
             </div>
           </DialogContent>
 
