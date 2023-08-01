@@ -28,6 +28,9 @@ export default function Home() {
   if (isLoading) return <p>Loading...</p>
   if (!searchResults) return <p>No profile data</p>
 
+  //if i want the vault to update on search, 
+  //then searchResults should relate to the search bar
+  //not the response of the api request
   const listItems = searchResults.map(game => 
     <GameCard 
       title={game.name} 
@@ -38,6 +41,7 @@ export default function Home() {
     />
   );
 
+  const listGames = searchResults.map((game, index) => <li id={index}>{index}{game.name}</li>)
 
   {/* Have state for games in this file and pass in save method*/}
   return (
@@ -53,7 +57,7 @@ export default function Home() {
       <div className='cards-container'>
         {listItems}
       </div>
-
+        {listGames}
     </main>
   );
 }
