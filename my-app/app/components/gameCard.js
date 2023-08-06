@@ -3,9 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
 
 import Rating from '@mui/material/Rating';
 
@@ -29,21 +26,21 @@ export default function GameCard({title, image_id, summary, genres, platforms}) 
       </Button>
       <h3 className="game-title">{title}</h3>
       <Dialog open={open} onClose={handleClose}>
-        <DialogContent className='dialog-popup-window'>
-          <DialogContent className='dialog-top'>
-            <div className='dialog-image' style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
+        <article className='dialog-popup-window'>
+          <div className='dialog-top'>
+            <div className='dialog-image' style={{backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
             </div>
             <div className='dialog-info-section'>
-              <DialogTitle>{title}</DialogTitle>
-              <DialogContentText>Genres - {genres}</DialogContentText>
-              <DialogContentText>Platforms - {platforms}</DialogContentText>
-              <DialogContentText>Developer and Publisher</DialogContentText>
+              <h1>{title}</h1>
+              <h4>Genres - {genres}</h4>
+              <h4>Platforms - {platforms}</h4>
+              <h4>Developer and Publisher</h4>
             </div>
-          </DialogContent>
-          <DialogContentText className='dialog-bottom'>
+          </div>
+          <p className='dialog-bottom'>
             {summary}
-          </DialogContentText>
-        </DialogContent>
+          </p>
+        </article>
 
         <DialogActions className='dialog-actions'>
           <Rating className="rating" name="half-rating" defaultValue={0} precision={0.5}

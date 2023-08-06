@@ -31,13 +31,15 @@ export default function Home() {
   //if i want the vault to update on search, 
   //then searchResults should relate to the search bar
   //not the response of the api request
+  const gameList = searchResults.map((prop) => prop.name)
+
   const listItems = searchResults.map(prop => 
     <GameCard 
       title={prop.name} 
       image_id={prop.cover.image_id} 
       summary={prop.summary} 
-      genres={prop.genres.map((genre) => genre.name)}
-      platforms={prop.platforms.map((platform) => platform.name)}
+      genres={prop.genres.map((genre) => genre.name + " ")}
+      platforms={prop.platforms.map((platform) => platform.name + " ")}
     />
   );
 
@@ -49,7 +51,7 @@ export default function Home() {
       <section id='search-section'>
         <h1> Search Section </h1>
         <div className='search'>
-          <SearchVar games={searchResults}></SearchVar>
+          <SearchVar games={gameList}></SearchVar>
           {/* i want to use search as a generic component for both titles and genres with the cached responses as the list input */}
         </div>
       </section>

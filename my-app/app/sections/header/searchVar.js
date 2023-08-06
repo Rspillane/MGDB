@@ -4,70 +4,47 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 import { useState } from 'react';
 
-import gameList from '../../page';
+export default function Search({ games }){
+  const [matchedResults, setMatchedResults] = useState([])
 
-export default function Search(){
+  let userSearch = ""
+  
+  function getUserInput() {
+    userSearch = document.getElementById('search-box').value
+    console.log(userSearch)
+    setMatchedResults(compareStringToArray(userSearch, games))
+    console.log(matchedResults); 
+    return [userSearch, matchedResults]
+  }
 
+  function compareStringToArray(userSearch, games) {
+    const lowerUserSearch = userSearch.toLowerCase()
+    let matchedResults = [];
+  
+    for (let i = 0; i < games.length; i++) {
+      const currentString = games[i].toLowerCase();
+      // Use the `includes()` method to check if the inputString is present in the array
+      if (currentString.includes(lowerUserSearch)) {
+        matchedResults.push(currentString);
+      }
+    }
+  
+    return matchedResults;
+  }
 
-function getUserInput() {
-  let userSearch = document.getElementById('search-box').value
-  console.log(userSearch)
-
-  return userSearch
-}
-
-
-function searchDatabase (userSearch) {
-  //compare userSearch with each item in an array 
-
-  //searchableItems = gameList.map(game = [game.name])
-
-}
-
-
-return (
-  <div>
-    <div class="search-header">
-      <div class="search-text">Search:</div>
-      <input id="search-box" onKeyUp={getUserInput}/>
-    </div>
+  return (
     <div>
-      <ol id="item-list"></ol>
+      <div class="search-header">
+        <div class="search-text">Search:</div>
+        <input id="search-box" onKeyUp={ getUserInput }/>
+      </div>
+
+      <div>
+        <ol id="item-list">
+          { matchedResults }
+        </ol>
+      </div>
     </div>
-  </div>
 
-)
-
+  )
 }
-// export default function SearchVar({games}) {
-
-//   // i think i need to put a function in to give the 
-//   // the result of the autocomplete a variable 
-//   // it needs to have all the data not just the title though
-//   // function can be on key up/ on change
-//   // also needs to have a contains() functionality
-//   //i need to understand my api response data
-
-
-
-//   return (
-//     <Autocomplete
-//       freeSolo
-//       id="free-solo-2-demo"
-//       disableClearable
-//       options={games.map((option) => option.name)}
-//       sx={{width : 300}}
-//       renderInput={(params) => (
-//         <TextField
-//           {...params}
-//           id='search-box'
-//           label="Search input"
-//           InputProps={{
-//             ...params.InputProps,
-//             type: 'search',
-//           }}
-//         />
-//       )}
-//     />
-// );
-// }
