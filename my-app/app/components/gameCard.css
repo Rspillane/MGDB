@@ -16,11 +16,6 @@
     background-size: cover;
     box-shadow: rgba(50, 50, 93, 0.4) 0px 50px 100px -20px, rgba(0, 0, 0, 0.45) 0px 30px 60px -30px;
 
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-
     padding: 20px;
     margin-bottom: 10px;
 }
@@ -57,19 +52,17 @@
 .dialog-top {
     display: flex;
     flex-direction: row;
-    background-color: blue;
 
 }
 
 .dialog-image{
-    width: 144px;
-    height: 190px;
+    width: 150px;
+    height: 200px;
     border-radius: 10px;
     background-size: cover;
 
 }
 
 .dialog-info-section {
-    background-color: red;
     margin-left: 20px;
 }

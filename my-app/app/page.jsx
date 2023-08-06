@@ -36,12 +36,12 @@ export default function Home() {
       title={game.name} 
       image_id={game.cover.image_id} 
       summary={game.summary} 
-      genres={game.genres} 
+      genres={game.genres.name} 
       platforms={game.platforms}
     />
   );
 
-  const listGames = searchResults.map((game, index) => <li id={index}>{index}{game.name}</li>)
+  const listGames = searchResults.map((game, index) => <p id={index}>{index} - {game.name}</p>)
 
   {/* Have state for games in this file and pass in save method*/}
   return (

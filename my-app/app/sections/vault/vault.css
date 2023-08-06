@@ -1,4 +1,36 @@
+
+
+  /* Mobile Styles - 1 column */
 .cards-container {
-    display: grid;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Tablet Styles - 2 columns */
+@media screen and (min-width: 468px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* Tablet Styles - 3 columns */
+@media screen and (min-width: 668px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop Styles - 4 columns */
+@media screen and (min-width: 900px) {
+  .cards-container {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+/* Desktop Styles - 5 columns */
+@media screen and (min-width: 1200px) {
+  .cards-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
