@@ -66,6 +66,6 @@
     width: 150px;
     height: 200px;
     border-radius: 10px;
-    object-fit: fill;
+    object-fit: cover;
     
 }
