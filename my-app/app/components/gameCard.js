@@ -6,6 +6,8 @@ import DialogActions from '@mui/material/DialogActions';
 
 import Rating from '@mui/material/Rating';
 
+
+
 import "./gameCard.css";
 
 export default function GameCard({title, image_id, summary, genres, platforms}) {
@@ -22,24 +24,29 @@ export default function GameCard({title, image_id, summary, genres, platforms}) 
 
   return (
     <div className="card">
-      <Button className='card_container' onClick={handleClickOpen} style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
+      <Button className='card_container' onClick={ handleClickOpen } style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
       </Button>
-      <h3 className="game-title">{title}</h3>
-      <Dialog open={open} onClose={handleClose}>
+      <h3 className="game-title">{ title }</h3>
+      <Dialog open={ open } onClose={ handleClose }>
         <article className='dialog-popup-window'>
           <div className='dialog-top'>
-            <div className='dialog-image' style={{backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
+            <div>
+              <div className='card_container' style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
+              </div>
             </div>
             <div className='dialog-info-section'>
-              <h1>{title}</h1>
-              <h4>Genres - {genres}</h4>
-              <h4>Platforms - {platforms}</h4>
+              <h1>{ title }</h1>
+              <h4>Genres - { genres }</h4>
+              <h4>Platforms -  { platforms }</h4>
               <h4>Developer and Publisher</h4>
             </div>
           </div>
-          <p className='dialog-bottom'>
-            {summary}
-          </p>
+          <div className='dialog-bottom'>
+
+            <p className='dialog-summary'>
+              { summary }
+            </p>
+          </div>
         </article>
 
         <DialogActions className='dialog-actions'>

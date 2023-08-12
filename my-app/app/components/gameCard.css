@@ -34,7 +34,7 @@
     width: 180px;
     padding-top: 10px;
 }
-
+/* -----------------DIALOG BOX-------------------- */
 .dialog-popup-window{
     display: flex;
     flex-direction: column;
@@ -63,9 +63,9 @@
 }
 
 .dialog-image {
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 300px;
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: contain;
     
 }

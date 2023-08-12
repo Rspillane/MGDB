@@ -26,6 +26,8 @@ export default function Home() {
       })
   },[]);
 
+
+
   if (isLoading) return <p>Loading...</p>
   if (!searchResults) return <p>No profile data</p>
 
@@ -34,15 +36,15 @@ export default function Home() {
 
   let textInput = '';
   
-  const ganeList = searchResults.map(prop => 
-    <GameCard 
-      title={prop.name} 
-      image_id={prop.cover.image_id} 
-      summary={prop.summary} 
-      genres={prop.genres.map((genre) => genre.name + " ")}
-      platforms={prop.platforms.map((platform) => platform.name + " ")}
-    />
-  );
+  // const gameList = searchResults.map(prop => 
+  //   <GameCard 
+  //     title={prop.name} 
+  //     image_id={prop.cover.image_id} 
+  //     summary={prop.summary} 
+  //     genres={prop.genres.map((genre) => genre.name + " ")}
+  //     platforms={prop.platforms.map((platform) => platform.name + " ")}
+  //   />
+  // );
 
   function getCompare(e) {
     textInput = (e.target.value).toLowerCase()
@@ -56,7 +58,7 @@ export default function Home() {
       title={prop.name} 
       image_id={prop.cover.image_id} 
       summary={prop.summary} 
-      genres={prop.genres.map((genre) => genre.name + " ")}
+      // genres={prop.genres.map((genre) => genre.name + " ")}
       platforms={prop.platforms.map((platform) => platform.name + " ")}
     />
   );
