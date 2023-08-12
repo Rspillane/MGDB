@@ -14,7 +14,6 @@ export default function Home() {
   const [searchResults, setSearchResults] = useState([])
   const [isLoading, setLoading] = useState(false)
   const [result, setResult] = useState([])
-  const [userInput, setUserInput] = useState('')
 
   useEffect(() => {
     // Update the document title using the browser API
@@ -33,22 +32,22 @@ export default function Home() {
   // if userInput is == '' the display gameList
     const gameList = searchResults.map((prop) => prop.name)
 
-  // const listItems = searchResults.map(prop => 
-  //   <GameCard 
-  //     title={prop.name} 
-  //     image_id={prop.cover.image_id} 
-  //     summary={prop.summary} 
-  //     genres={prop.genres.map((genre) => genre.name + " ")}
-  //     platforms={prop.platforms.map((platform) => platform.name + " ")}
-  //   />
-  // );
+  let textInput = '';
   
-  function getUserInput() {
-    setUserInput(document.getElementById('search-box').value)
+  const ganeList = searchResults.map(prop => 
+    <GameCard 
+      title={prop.name} 
+      image_id={prop.cover.image_id} 
+      summary={prop.summary} 
+      genres={prop.genres.map((genre) => genre.name + " ")}
+      platforms={prop.platforms.map((platform) => platform.name + " ")}
+    />
+  );
 
-    setResult('')
-    setResult(() => searchResults.filter((searchResults) => searchResults.name.toLowerCase().includes(userInput)))
-    console.log(result); 
+  function getCompare(e) {
+    textInput = (e.target.value).toLowerCase()
+    
+    setResult(() => searchResults.filter((searchResults) => searchResults.name.toLowerCase().includes(textInput)))
   }
 
 
@@ -71,12 +70,12 @@ export default function Home() {
         <h1> Search Section </h1>
         <div className='search'>
           <div class="search-text">Search:</div>
-          <input id="search-box" onKeyUp={ getUserInput }/>
+          <input id="search-box" onKeyUp={ getCompare }/>
         </div>
       </section>
       <h1>Game Vault</h1>
       <div className='cards-container'>
-          { listItems }
+        { listItems }
       </div>
     </main>
   );
