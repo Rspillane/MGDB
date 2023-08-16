@@ -31,13 +31,18 @@ export default function GameCard({title, image_id, summary, genres, platforms}) 
         <article className='dialog-popup-window'>
           <div className='dialog-top'>
             <div>
-              <div className='card_container' style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
+              <div className='card_container dialog-image' style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
               </div>
             </div>
             <div className='dialog-info-section'>
               <h1>{ title }</h1>
-              <h4>Genres - { genres }</h4>
-              <h4>Platforms -  { platforms }</h4>
+              {genres && (
+                <h4>Genres - { genres }</h4>
+              )}
+              {platforms && (
+                <h4>Platforms -  { platforms }</h4>
+              )}
+              
               <h4>Developer and Publisher</h4>
             </div>
           </div>
