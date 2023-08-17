@@ -32,9 +32,13 @@ export default function Home() {
   if (!searchResults) return <p>No profile data</p>
 
   // if userInput is == '' the display gameList
-    const gameList = searchResults.map((prop) => prop.name)
+  const gameList = searchResults.map((prop) => prop.name)
 
-  let textInput = '';
+  let searchCriteria = {
+    textInput: '',
+    genre: [],
+    platform: []
+  }
   
   // const gameList = searchResults.map(prop => 
   //   <GameCard 
@@ -47,7 +51,7 @@ export default function Home() {
   // );
 
   function getCompare(e) {
-    textInput = (e.target.value).toLowerCase()
+    searchCriteria.textInput = (e.target.value).toLowerCase()
     
     setResult(() => searchResults.filter((searchResults) => searchResults.name.toLowerCase().includes(textInput)))
   }
@@ -63,7 +67,18 @@ export default function Home() {
     />
   );
   
-
+ const getPlatform = (e) => {
+  if (searchCriteria.platform.includes(e.target.value)){
+    for (let i = 0; i < searchCriteria.platform.length; i++){
+      if (searchCriteria.platform[i] === ''){
+        searchCriteria.platform.splice(i, 1)
+      }
+    } 
+  } else {
+      searchCriteria.platform.push(e.target.value)
+      console.log(searchCriteria.platform)
+  }
+ }
 
   {/* Have state for games in this file and pass in save method*/}
   return (
@@ -73,6 +88,15 @@ export default function Home() {
         <div className='search'>
           <div class="search-text">Search:</div>
           <input id="search-box" onKeyUp={ getCompare }/>
+        </div>
+        <div className='filter'>
+          Platforms:
+        <input type="checkbox" name="filter-platforms" value="nintendo" onChange={ getPlatform }/>
+        <label for="filter-platforms"> Nintendo </label>
+        <input type="checkbox" name="filter-platforms" value="ps" onChange={ getPlatform }/>
+        <label for="filter-platforms"> PS </label>
+        <input type="checkbox" name="filter-platforms" value="xbox" onChange={ getPlatform }/>
+        <label for="filter-platforms"> Xbox </label>
         </div>
       </section>
       <h1>Game Vault</h1>

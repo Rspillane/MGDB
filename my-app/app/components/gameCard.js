@@ -24,8 +24,10 @@ export default function GameCard({title, image_id, summary, genres, platforms}) 
 
   return (
     <div className="card">
-      <Button className='card_container' onClick={ handleClickOpen } style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
-      </Button>
+      <div className='card-image'>
+        <Button className='card_container' onClick={ handleClickOpen } style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
+        </Button>
+      </div>
       <h3 className="game-title">{ title }</h3>
       <Dialog open={ open } onClose={ handleClose }>
         <article className='dialog-popup-window'>
@@ -36,14 +38,13 @@ export default function GameCard({title, image_id, summary, genres, platforms}) 
             </div>
             <div className='dialog-info-section'>
               <h1>{ title }</h1>
-              {genres && (
-                <h4>Genres - { genres }</h4>
-              )}
               {platforms && (
-                <h4>Platforms -  { platforms }</h4>
+                <p>Platform: { platforms }</p>
               )}
-              
-              <h4>Developer and Publisher</h4>
+              {genres && (
+                <p>Genres: { genres }</p>
+              )}
+              <p>Developer and Publisher</p>
             </div>
           </div>
           <div className='dialog-bottom'>
@@ -54,14 +55,14 @@ export default function GameCard({title, image_id, summary, genres, platforms}) 
           </div>
         </article>
 
-        <DialogActions className='dialog-actions'>
+        {/* <DialogActions className='dialog-actions'>
           <Rating className="rating" name="half-rating" defaultValue={0} precision={0.5}
           value={value}
           onChange={(event, newValue) => {
             setValue(newValue);
         }}/>
           { !value ? <button className="wishlist" onClick={() => {handleClose; setWish(true)}}>Wishlist</button>: null }
-        </DialogActions>
+        </DialogActions> */}
       </Dialog>
     </div>
   )
