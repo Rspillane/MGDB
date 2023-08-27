@@ -53,7 +53,7 @@ export default function Home() {
   function getCompare(e) {
     searchCriteria.textInput = (e.target.value).toLowerCase()
     
-    setResult(() => searchResults.filter((searchResults) => searchResults.name.toLowerCase().includes(textInput)))
+    setResult(() => searchResults.filter((searchResults) => searchResults.name.toLowerCase().includes(searchCriteria.textInput)))
   }
 
 
@@ -78,6 +78,7 @@ export default function Home() {
       searchCriteria.platform.push(e.target.value)
       console.log(searchCriteria.platform)
   }
+  console.log(searchCriteria)
  }
 
   {/* Have state for games in this file and pass in save method*/}
