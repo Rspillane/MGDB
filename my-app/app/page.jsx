@@ -70,7 +70,7 @@ export default function Home() {
  const getPlatform = (e) => {
   if (searchCriteria.platform.includes(e.target.value)){
     for (let i = 0; i < searchCriteria.platform.length; i++){
-      if (searchCriteria.platform[i] === ''){
+      if (searchCriteria.platform[i] === e.target.value){
         searchCriteria.platform.splice(i, 1)
       }
     } 
