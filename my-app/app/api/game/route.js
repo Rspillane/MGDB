@@ -19,7 +19,7 @@
       'Client-ID': 'sgukfvdo3to7ptty3fbhv5wqjvm5bu',
       'Authorization': `Bearer ${data.access_token}`
     },
-    body: "fields name,cover.image_id,summary,genres.name,release_dates.y,platforms.name; where rating > 95; limit 500;"
+    body: "fields name,cover.image_id,summary,genres.name,first_release_date,platforms.name; where rating > 95; limit 100;"
     })
 
     const gameResponse = await games.json()

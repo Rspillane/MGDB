@@ -40,12 +40,12 @@ export default function GameCard({title, releaseDate, image_id, summary, genres,
               <h1>{ title }</h1>
               <h3> { releaseDate } </h3>
               {platforms && (
-                <p>Platform: { platforms }</p>
+                <p>Platforms: { platforms }</p>
               )}
               {genres && (
                 <p>Genres: { genres }</p>
               )}
-              <p>Developer and Publisher</p>
+
             </div>
           </div>
           <div className='dialog-bottom'>
