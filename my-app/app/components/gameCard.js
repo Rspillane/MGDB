@@ -10,7 +10,7 @@ import Rating from '@mui/material/Rating';
 
 import "./gameCard.css";
 
-export default function GameCard({title, image_id, summary, genres, platforms}) {
+export default function GameCard({title, releaseDate, image_id, summary, genres, platforms}) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = useState();
 
@@ -38,6 +38,7 @@ export default function GameCard({title, image_id, summary, genres, platforms}) 
             </div>
             <div className='dialog-info-section'>
               <h1>{ title }</h1>
+              <h3> { releaseDate } </h3>
               {platforms && (
                 <p>Platform: { platforms }</p>
               )}

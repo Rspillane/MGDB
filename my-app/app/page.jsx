@@ -32,7 +32,7 @@ export default function Home() {
   if (!searchResults) return <p>No profile data</p>
 
   // if userInput is == '' the display gameList
-  const gameList = searchResults.map((prop) => prop.name)
+  const gameList = searchResults.map((prop) => prop.release_dates.y)
 
   let searchCriteria = {
     textInput: '',
@@ -53,13 +53,18 @@ export default function Home() {
   function getCompare(e) {
     searchCriteria.textInput = (e.target.value).toLowerCase()
     
-    setResult(() => searchResults.filter((searchResults) => searchResults.name.toLowerCase().includes(searchCriteria.textInput)))
+    setResult(() => searchResults.filter((searchResults) => 
+      searchResults.name.toLowerCase().includes(searchCriteria.textInput))
+      // &&
+      // searchResults.platform.toLowerCase().includes(searchCriteria.platform)
+    )
   }
 
 
   const listItems = result.map(prop => 
     <GameCard 
       title={prop.name} 
+      releaseDate={prop.release_dates[0].y}
       image_id={prop.cover.image_id} 
       summary={prop.summary} 
       genres={prop.genres.map((genre) => genre.name + " ")}
@@ -79,6 +84,7 @@ export default function Home() {
       console.log(searchCriteria.platform)
   }
   console.log(searchCriteria)
+  console.log(searchResults.platform)
  }
 
   {/* Have state for games in this file and pass in save method*/}
@@ -103,6 +109,7 @@ export default function Home() {
       <h1>Game Vault</h1>
       <div className='cards-container'>
         { listItems }
+        { gameList }
       </div>
     </main>
   );
