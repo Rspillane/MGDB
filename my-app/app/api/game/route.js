@@ -19,14 +19,10 @@
       'Client-ID': 'sgukfvdo3to7ptty3fbhv5wqjvm5bu',
       'Authorization': `Bearer ${data.access_token}`
     },
-    body: "fields name,cover.image_id,summary,genres.name,first_release_date,platforms.name; where rating > 95; limit 100;"
+    body: "fields name,cover.image_id,summary,genres.name,first_release_date,platforms.name; where rating > 90; limit 500;"
     })
 
     const gameResponse = await games.json()
-    // console.log(gameResponse)
-
-    // const gameList = gameResponse.map(game => game.genres.name)
-    // console.log(gameList)
       
     return NextResponse.json({games: gameResponse})
 }

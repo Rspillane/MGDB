@@ -2,17 +2,21 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-
-import Rating from '@mui/material/Rating';
-
-
 
 import "./gameCard.css";
 
 export default function GameCard({title, releaseDate, image_id, summary, genres, platforms}) {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = useState();
+
+  function unixTimeToDateTime(unixTimestamp) {
+    const dateObj = new Date(unixTimestamp * 1000); // convert to milliseconds
+    const year = dateObj.getFullYear();
+    const month = dateObj.getMonth() + 1; // add 1, since the first month is 0
+    const day = dateObj.getDate();
+  
+    // return in a formatted string
+    return `${month}/${day}/${year}`;
+  }
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -38,7 +42,7 @@ export default function GameCard({title, releaseDate, image_id, summary, genres,
             </div>
             <div className='dialog-info-section'>
               <h1>{ title }</h1>
-              <h3> { releaseDate } </h3>
+              <h3> Release Date: { unixTimeToDateTime(releaseDate) } </h3>
               {platforms && (
                 <p>Platforms: { platforms }</p>
               )}
