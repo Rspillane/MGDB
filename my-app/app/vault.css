@@ -1,6 +1,7 @@
 
   /* Mobile Styles - 1 column */
 .cards-container {
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
 }

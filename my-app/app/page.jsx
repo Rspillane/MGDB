@@ -76,16 +76,25 @@ export default function Home() {
 
   function alphaSort () {
     if (order === "Asc"){
-      setResult(sortByProperty(result, "name", true))
+      result.length > 0 ?
+      setResult(sortByProperty(result, "name", true)):
+      setSearchResults(sortByProperty(searchResults, "name", true))
     } else if (order === "Desc"){
-      setResult(sortByProperty(result, "name", false))
+      result.length > 0 ?
+      setResult(sortByProperty(result, "name", false)):
+      setSearchResults(sortByProperty(searchResults, "name", false))
     }
   }
   function dateSort() {
     if (order === "Asc"){
-      setResult(sortByProperty(result, "first_release_date", true))
+      // result.length > 0 ? listItems : defaultList
+      result.length > 0 ?
+      setResult(sortByProperty(result, "first_release_date", true)) :
+      setSearchResults(sortByProperty(searchResults, "first_release_date", true))
     } else if (order === "Desc"){
-      setResult(sortByProperty(result, "first_release_date", false))
+      result.length > 0 ?
+      setResult(sortByProperty(result, "first_release_date", false)) :
+      setSearchResults(sortByProperty(searchResults, "first_release_date", false))
     }
     
   }
@@ -100,10 +109,14 @@ export default function Home() {
     }
 
     if (order === "Desc"){
-      setResult(sortByProperty(result, sortProp, true))
+      result.length > 0 ?
+      setResult(sortByProperty(result, sortProp, true)) :
+      setSearchResults(sortByProperty(searchResults, sortProp, true));
       setOrder("Asc")
     } else {
-      setResult(sortByProperty(result, sortProp, false))
+      result.length > 0 ?
+      setResult(sortByProperty(result, sortProp, false)) :
+      setSearchResults(sortByProperty(searchResults, sortProp, false));
       setOrder("Desc")
     }
   }
@@ -119,37 +132,32 @@ export default function Home() {
     />
   );
   
-  if(!listItems){
-    console.log('falsy')
-  } else {
-    console.log('truthy')
-  }
   return (
     <main className={ styles.main }>
       <section id='search-section'>
-        <h1> Find a game! </h1>
+        <h1> MGDb </h1>
         <br></br>
         <div className='search'>
           <TextField id="search-box" label="Search" variant="standard" onKeyUp={ getCompare }/>
         </div>
 
         <div className='sort'>
-          <input type="radio" id="radio-alpha" value="alphabetical" name="sort" onClick={ alphaSort }/>
-          <label for='radio-alpha'>  Abc...</label>
-          <br></br>
-          <input type="radio" id="radio-date" value="date" name="sort" onClick={ dateSort }/>
-          <label for='radio-date'>  Date</label>
-          <br></br>
+          <div className='sort-options'>
+            <input type="radio" id="radio-alpha" value="alphabetical" name="sort" onClick={ alphaSort }/>
+            <label for='radio-alpha'>  Abc...</label>
+            <input type="radio" id="radio-date" value="date" name="sort" onClick={ dateSort }/>
+            <label for='radio-date'>  Date</label>
+          </div>
           <div className='sort-order'>
-            <p>{ order }</p>
+            <div className='sort-order-text'>
+              <p>{ order }</p>
+            </div>
             <input type='checkbox' id='sort-switch'/><label for='sort-switch' onClick={ toggleOrder }></label>
           </div>
         </div>
       </section>
       <div className='cards-container'>
-        {/* if listItems is empty then display searchResults.map */}
         { result.length > 0 ? listItems : defaultList }
-        {/* { listItems } */}
       </div>
     </main>
   );
