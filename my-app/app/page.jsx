@@ -1,8 +1,10 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+import TextField from '@mui/material/TextField';
 
 import styles from './page.module.css';
-import './sections/vault/vault.css';
+import './searchbox.css';
+import './vault.css';
 
 import GameCard from './components/gameCard';
 
@@ -11,7 +13,7 @@ export default function Home() {
   const [searchResults, setSearchResults] = useState([])
   const [isLoading, setLoading] = useState(false)
   const [result, setResult] = useState([])
-  const [order, setOrder] = useState('Asc')
+  const [order, setOrder] = useState('Order')
 
   useEffect(() => {
     // Update the document title using the browser API
@@ -27,13 +29,23 @@ export default function Home() {
   if (isLoading) return <p>Loading...</p>
   if (!searchResults) return <p>No profile data</p>
 
-
+// might not need this
   let searchCriteria = {
     textInput: '',
     genre: [],
     platform: []
   }
 
+  const defaultList = searchResults.map(prop => 
+    <GameCard 
+      title={prop.name} 
+      releaseDate={prop.first_release_date}
+      image_id={prop.cover?.image_id} 
+      summary={prop.summary} 
+      genres={prop.genres?.map((genre) => genre.name + " ")}
+      platforms={prop.platforms?.map((platform) => platform.name + " ")}
+    />
+  );
 
   function getCompare(e) {
     searchCriteria.textInput = (e.target.value).toLowerCase()
@@ -107,26 +119,37 @@ export default function Home() {
     />
   );
   
-
+  if(!listItems){
+    console.log('falsy')
+  } else {
+    console.log('truthy')
+  }
   return (
     <main className={ styles.main }>
       <section id='search-section'>
-        <h1> Search Section </h1>
+        <h1> Find a game! </h1>
+        <br></br>
         <div className='search'>
-          <div class="search-text">Search:</div>
-          <input id="search-box" onKeyUp={ getCompare }/>
+          <TextField id="search-box" label="Search" variant="standard" onKeyUp={ getCompare }/>
         </div>
 
         <div className='sort'>
-          <input type="radio" id="radio-alpha" value="alphabetical" name="sort" onClick={ alphaSort }/> Alphabetical
+          <input type="radio" id="radio-alpha" value="alphabetical" name="sort" onClick={ alphaSort }/>
+          <label for='radio-alpha'>  Abc...</label>
           <br></br>
-          <input type="radio" id="radio-date" value="date" name="sort" onClick={ dateSort }/> Release Date
-          <button onClick={ toggleOrder }> { order } </button>
+          <input type="radio" id="radio-date" value="date" name="sort" onClick={ dateSort }/>
+          <label for='radio-date'>  Date</label>
+          <br></br>
+          <div className='sort-order'>
+            <p>{ order }</p>
+            <input type='checkbox' id='sort-switch'/><label for='sort-switch' onClick={ toggleOrder }></label>
+          </div>
         </div>
       </section>
-      <h1>Game Vault</h1>
       <div className='cards-container'>
-        { listItems }
+        {/* if listItems is empty then display searchResults.map */}
+        { result.length > 0 ? listItems : defaultList }
+        {/* { listItems } */}
       </div>
     </main>
   );
