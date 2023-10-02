@@ -36,8 +36,9 @@ export default function Home() {
     platform: []
   }
 
-  const defaultList = searchResults.map(prop => 
+  const defaultList = searchResults.map((prop) => 
     <GameCard 
+      key={`default-${prop.id}`}
       title={prop.name} 
       releaseDate={prop.first_release_date}
       image_id={prop.cover?.image_id} 
@@ -75,7 +76,7 @@ export default function Home() {
   }
 
   function alphaSort () {
-    if (order === "Asc"){
+    if (order === "Asc" || order==='Order'){
       result.length > 0 ?
       setResult(sortByProperty(result, "name", true)):
       setSearchResults(sortByProperty(searchResults, "name", true))
@@ -86,7 +87,7 @@ export default function Home() {
     }
   }
   function dateSort() {
-    if (order === "Asc"){
+    if (order === "Asc" || order==='Order'){
       // result.length > 0 ? listItems : defaultList
       result.length > 0 ?
       setResult(sortByProperty(result, "first_release_date", true)) :
@@ -121,8 +122,9 @@ export default function Home() {
     }
   }
 
-  const listItems = result.map(prop => 
-    <GameCard 
+  const listItems = result.map((prop) => 
+    <GameCard
+      key={`gamecard-${prop.id}`}
       title={prop.name} 
       releaseDate={prop.first_release_date}
       image_id={prop.cover?.image_id} 
@@ -138,21 +140,21 @@ export default function Home() {
         <h1> MGDb </h1>
         <br></br>
         <div className='search'>
-          <TextField id="search-box" label="Search" variant="standard" onKeyUp={ getCompare }/>
+          <TextField id="search-box" htmlFor="Search" variant="standard" onKeyUp={ getCompare }/>
         </div>
 
         <div className='sort'>
           <div className='sort-options'>
             <input type="radio" id="radio-alpha" value="alphabetical" name="sort" onClick={ alphaSort }/>
-            <label for='radio-alpha'>  Abc...</label>
+            <label htmlFor='radio-alpha'>  Abc...</label>
             <input type="radio" id="radio-date" value="date" name="sort" onClick={ dateSort }/>
-            <label for='radio-date'>  Date</label>
+            <label htmlFor='radio-date'>  Date</label>
           </div>
           <div className='sort-order'>
             <div className='sort-order-text'>
               <p>{ order }</p>
             </div>
-            <input type='checkbox' id='sort-switch'/><label for='sort-switch' onClick={ toggleOrder }></label>
+            <input type='checkbox' id='sort-switch'/><label htmlFor='sort-switch' onClick={ toggleOrder }></label>
           </div>
         </div>
       </section>
