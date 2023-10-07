@@ -4,7 +4,7 @@
 
 - [Overview](#overview)
 - [Built With](#built-with)
-- [Learning Outcomes](#learning-outcomes)
+- [Future Updates](#future-updates)
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
