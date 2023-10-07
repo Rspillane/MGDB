@@ -1,4 +1,4 @@
-# forest-brewing-company
+# My Game Database (MGDb)
 
 ## Table of Contents
 
