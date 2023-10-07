@@ -32,13 +32,26 @@ export default function Home() {
 // might not need this
   let searchCriteria = {
     textInput: '',
-    genre: [],
-    platform: []
+    //not currently used below
+    // genre: [],
+    // platform: []
   }
 
   const defaultList = searchResults.map((prop) => 
     <GameCard 
       key={`default-${prop.id}`}
+      title={prop.name} 
+      releaseDate={prop.first_release_date}
+      image_id={prop.cover?.image_id} 
+      summary={prop.summary} 
+      genres={prop.genres?.map((genre) => genre.name + " ")}
+      platforms={prop.platforms?.map((platform) => platform.name + " ")}
+    />
+  );
+
+  const listItems = result.map((prop) => 
+    <GameCard
+      key={`gamecard-${prop.id}`}
       title={prop.name} 
       releaseDate={prop.first_release_date}
       image_id={prop.cover?.image_id} 
@@ -76,7 +89,7 @@ export default function Home() {
   }
 
   function alphaSort () {
-    if (order === "Asc" || order==='Order'){
+    if (order === "Asc" || order === 'Order'){
       result.length > 0 ?
       setResult(sortByProperty(result, "name", true)):
       setSearchResults(sortByProperty(searchResults, "name", true))
@@ -87,7 +100,7 @@ export default function Home() {
     }
   }
   function dateSort() {
-    if (order === "Asc" || order==='Order'){
+    if (order === "Asc" || order === 'Order'){
       // result.length > 0 ? listItems : defaultList
       result.length > 0 ?
       setResult(sortByProperty(result, "first_release_date", true)) :
@@ -122,17 +135,6 @@ export default function Home() {
     }
   }
 
-  const listItems = result.map((prop) => 
-    <GameCard
-      key={`gamecard-${prop.id}`}
-      title={prop.name} 
-      releaseDate={prop.first_release_date}
-      image_id={prop.cover?.image_id} 
-      summary={prop.summary} 
-      genres={prop.genres?.map((genre) => genre.name + " ")}
-      platforms={prop.platforms?.map((platform) => platform.name + " ")}
-    />
-  );
   
   return (
     <main className={ styles.main }>
@@ -159,7 +161,8 @@ export default function Home() {
         </div>
       </section>
       <div className='cards-container'>
-        { result.length > 0 ? listItems : defaultList }
+        { result.length > 0 ? listItems : defaultList }]
+        {/* BUG -> if no matching results results.length == 0 and therefore it switches back to default list */}
       </div>
     </main>
   );
