@@ -14,6 +14,7 @@ export default function Home() {
   const [isLoading, setLoading] = useState(false)
   const [result, setResult] = useState([])
   const [order, setOrder] = useState('Order')
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     // Update the document title using the browser API
@@ -28,14 +29,6 @@ export default function Home() {
 
   if (isLoading) return <p>Loading...</p>
   if (!searchResults) return <p>No profile data</p>
-
-// might not need this
-  let searchCriteria = {
-    textInput: '',
-    //not currently used below
-    // genre: [],
-    // platform: []
-  }
 
   const defaultList = searchResults.map((prop) => 
     <GameCard 
@@ -62,10 +55,11 @@ export default function Home() {
   );
 
   function getCompare(e) {
-    searchCriteria.textInput = (e.target.value).toLowerCase()
+    const currentSearchTerm = (e.target.value).toLowerCase();
+    setSearchTerm(currentSearchTerm)
 
     setResult(() => searchResults.filter((searchResults) => 
-      searchResults.name?.toLowerCase().includes(searchCriteria.textInput))
+      searchResults.name?.toLowerCase().includes(currentSearchTerm))
     )
   }
 
@@ -161,7 +155,9 @@ export default function Home() {
         </div>
       </section>
       <div className='cards-container'>
-        { result.length > 0 ? listItems : defaultList }]
+        {/* { result.length > 0 ? listItems : defaultList } */}
+        { searchTerm.length > 0 ? listItems : null }
+        { searchTerm.length === 0 && defaultList }
         {/* BUG -> if no matching results results.length == 0 and therefore it switches back to default list */}
       </div>
     </main>
