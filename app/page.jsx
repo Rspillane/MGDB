@@ -27,7 +27,7 @@ export default function Home() {
       })
   },[]);
 
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading) return  <div>Loading...</div>
   if (!searchResults) return <p>No profile data</p>
 
   const defaultList = searchResults.map((prop) => 
