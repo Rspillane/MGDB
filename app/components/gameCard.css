@@ -42,10 +42,11 @@
     display: flex;
     flex-direction: column;
     padding: 15px;
-    gap: 20px;
+    row-gap: 20px;
 }
 
-.dialog-actions{
+/* Not in production */
+/* .dialog-actions{
     margin: 20px;
 
     width: 250px;
@@ -57,20 +58,61 @@
 .wishlist {
     cursor: pointer;
     width: 100%;
-}
+} */
 
 .dialog-top {
     display: flex;
     flex-direction: row;
-    gap: 20px
+    column-gap: 20px;
+    row-gap: 20px;
 }
 
 .dialog-info-section {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    row-gap: 10px;
 }
 
 .dialog-image {
     cursor:default;
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    background-size: 100% 100%;
+    background-position: center;
+    filter: drop-shadow(5px 5px 4px #acadb4);
 }
+
+h1 {
+    margin: 0;
+}
+h3 {
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+
+
+/* Dialog Mobile */
+@media only screen and (max-width: 600px) {
+    h1 {
+      font-size: 20px;
+    }
+    h3 {
+        font-size: 18px;
+      }
+    p {
+      font-size: 16px;
+    }
+  
+    .dialog-popup-window {
+        justify-content: center;
+        align-items: center;
+    }
+    .dialog-top{
+        flex-direction: column;
+        align-items: center;
+    }
+    /* Add more styles as needed */
+  }

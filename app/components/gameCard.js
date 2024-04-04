@@ -37,8 +37,8 @@ export default function GameCard({title, releaseDate, image_id, summary, genres,
         <article className='dialog-popup-window'>
           <div className='dialog-top'>
             <div>
-              <div className='card_container dialog-image' style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
-              </div>
+              <div className='dialog-image' style={{ backgroundImage: `url("//images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg")`}}>
+                </div>
             </div>
             <div className='dialog-info-section'>
               <h1>{ title }</h1>
