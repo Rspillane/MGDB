@@ -12,7 +12,7 @@
 
 <img width="945" alt="Screenshot 2023-10-07 at 15 18 37" src="https://github.com/Rspillane/nextJS/assets/41272270/67aad3ab-3dff-4b43-81ab-f3b09cd2b394">
 
-Demo link  - https://rspillane.github.io/x/
+Demo link  - [https://rspillane.github.io/x/](https://mgdb-jade.vercel.app/)
 
 This project's objective is to build an IMDb clone but for video games. I plan to build the complexity up as I go, however initially i am just trying to get used to react and next JS. I am currently using IGDB's API to get the data for the website. 
 
